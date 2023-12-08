@@ -1,6 +1,19 @@
+@use "./AllColors.scss" as colors;
+
 $fullscreen: 100%;
 $center: center;
 $auto: auto;
+
+@mixin commancenter{
+  display: flex;
+  justify-content: $center;
+  align-items: $center;
+}
+
+@mixin commanHight{
+  height: 50px;
+}
+
 
 * {
   margin: 0;
@@ -16,14 +29,14 @@ html, body {
 }
 
 .nav {
-  height: 50px;
+ @include commanHight;
 }
 
 .nav li {
   float: left;
   padding: 15px;
   list-style: none;
-  color: white;
+  color: colors.$white;
 }
 
 .container {
@@ -34,7 +47,7 @@ html, body {
 
 .card {
   width: 24%;
-  border: 1px solid rgb(211, 211, 211);
+  border: 1px solid  colors.$whiteRgb;
 }
 .c {
   margin-left: 3%;
@@ -49,32 +62,26 @@ html, body {
   padding: 1.8%;
 }
 .head {
-  display: flex;
-  justify-content: $center;
-  align-items: $center;
+@include commancenter;
 }
 .disc {
   margin-top: 7%;
   margin-left: 10%;
 }
 .parentbutton {
-  display: flex;
-  justify-content: $center;
-  align-items: $center;
+@include commancenter;
   padding: 10%;
 }
 .btn1, .btn2 {
-  display: flex;
-  justify-content: $center;
-  align-items: $center;
+@include commancenter;
   width: 90px;
   height: 40px;
   border-radius: 8px;
 }
 
 .btn1 {
-  background-color: #428BCA;
-  color: rgb(255, 255, 255);
+  background-color: colors.$blueNumber;
+  color: colors.$white5;
 }
 
 .btn2 {
@@ -87,9 +94,9 @@ body {
 }
 
 .nav {
-  height: 50px;
+ @include commanHight;
   width: $fullscreen;
-  background-color: #202020;
+  background-color: colors.$brown;
   position: relative;
 }
 
@@ -100,7 +107,7 @@ body {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 22px;
-  color: rgb(155, 151, 151);
+  color: colors.$grey;
   padding: 10px 10px 10px 10px;
 }
 
@@ -118,11 +125,11 @@ body {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
-  color: rgb(155, 151, 151);
+  color: colors.$grey;
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: colors.$blackRgb;
 }
 
 .nav > #nav-check {
@@ -140,9 +147,9 @@ body {
   align-items: $center;
   height: 90%;
   padding: 5%;
-  background-color: rgb(229, 227, 227);
+  background-color: colors.$white2;
   margin-top: 40px;
-  color: #353131;
+  color:  colors.$grey2;
 }
 
 .centered-div h3 {
@@ -212,24 +219,24 @@ button {
   .nav > .nav-btn > label {
     display: inline-block;
     width: 50px;
-    height: 50px;
+   @include commanHight;
     padding: 13px;
   }
   .nav > .nav-btn > label:hover,
   .nav #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color:  colors.$blackRgb;
   }
   .nav > .nav-btn > label > span {
     display: block;
     width: 25px;
     height: 10px;
-    border-top: 2px solid #eee;
+    border-top: 2px solid  colors.$white3;
   }
   .nav > .nav-links {
     position: absolute;
     display: block;
     width: $fullscreen;
-    background-color: #333;
+    background-color:  colors.$brown2;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
